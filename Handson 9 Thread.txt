@@ -1,0 +1,298 @@
+1)package com.Handson9;
+
+import java.text.DecimalFormat;
+
+import java.util.HashMap;
+
+import java.util.Iterator;
+
+import java.util.Scanner;
+
+public class Example1 {
+
+public static void main(String[] args) {
+
+                Scanner sc = new Scanner(System.in);
+
+    int s = sc.nextInt();
+
+    HashMap<Integer, Double> hm = new HashMap<Integer, Double>();
+
+    for (int i = 0; i < s; i++) {
+
+    hm.put((sc.nextInt()), sc.nextDouble());
+
+    }
+
+    System.out.println(display(hm));
+
+    }
+
+    public static String display(HashMap<Integer, Double> hm) {
+
+    double sum = 0.00;
+
+    int count = 0;
+
+    DecimalFormat df = new DecimalFormat("#.00");
+
+    Iterator<Integer> it = hm.keySet().iterator();
+
+    while (it.hasNext()) {
+
+    int y = it.next();
+
+    if (y % 2 == 0) {
+
+    sum = (double) (sum + hm.get(y));
+
+    count++;
+
+    }
+
+}
+
+    double d = sum / count;
+
+    return df.format(d);
+
+}
+
+}
+
+Output:
+
+2
+
+5
+
+9.1
+
+8
+
+3
+
+3.00
+
+ 
+
+2)package com.Handson9;
+
+import java.util.HashMap;
+
+import java.util.Iterator;
+
+import java.util.Scanner;
+
+class UserMainCode{
+public static int sizeOfResultandHashMap(HashMap<Integer ,String>hm){
+int k,count=0;
+Iterator<Integer> it=hm.keySet().iterator();
+while(it.hasNext()){
+k=it.next();
+if(k%3!=0)count++;
+
+               }
+return count;
+
+        }
+public static void main(String[] args) {
+Scanner in=new Scanner(System.in);
+int n=in.nextInt();
+HashMap<Integer,String> hm=new HashMap<Integer,String>();
+for(int i=0;i<n;i++){
+hm.put(in.nextInt(),in.next());
+}
+
+System.out.println(UserMainCode.sizeOfResultandHashMap(hm));
+
+}
+
+}
+
+ 
+
+Output
+
+4
+
+339
+
+RON
+
+1010
+
+JONS
+
+3366
+
+SMITH
+
+2020
+
+TIM
+
+2
+
+ 
+
+3)package com.Handson9;
+
+import java.util.HashMap;
+
+import java.util.Iterator;
+
+import java.util.Scanner;
+
+class UserMainCode1{
+public static String sizeOfResultandHashMap(HashMap<Integer ,String> hm){
+int max=0;
+String s1=" ";
+Iterator<Integer> it=hm.keySet().iterator();
+while(it.hasNext()) {
+int a=it.next();
+if(a>max){
+max=a;
+String s2=hm.get(a);
+s1=s2;
+}
+}
+returns 2;
+}
+static void main(String[] args)
+
+                {
+Scanner in=new Scanner(System.in);
+int n=in.nextInt();
+HashMap<Integer,String> hm=new HashMap<Integer,String>();
+for(int i=0;i<n;i++){
+hm.put(in.nextInt(),in.next());}
+
+}
+System.out.println(UserMainCode1.sizeOfResultandHashMap(hm));
+
+}
+
+Output:
+
+3
+
+12
+
+amron
+
+9
+
+Exide
+
+7
+
+SF
+
+ 
+
+Amron
+
+ 
+
+4)package com.demo;
+import java.util.*;
+
+public class Main {
+
+public static Scanner sc;
+
+public static void main(String[] args) {
+
+sc = new Scanner(System.in);
+
+int k1 = Integer.parseInt(sc.nextLine());
+
+LinkedHashMap<String, String> hm = new LinkedHashMap<String, String>();
+
+for (int i = 0; i < k1; i++) {
+
+String k = sc.nextLine();
+
+String s = sc.nextLine();
+
+hm.put(k, s);
+
+}
+
+String n = sc.nextLine();
+
+LinkedHashMap<String, String> hm1 = new LinkedHashMap<String, String>();
+
+hm1 = dis(hm, n);
+
+Iterator<String> it = hm1.keySet().iterator();
+
+while (it.hasNext()) {
+
+String s2 = it.next();
+
+System.out.println(s2);
+
+}
+
+}
+
+public static LinkedHashMap<String, String> dis(LinkedHashMap<String, String> h1, String n) {
+
+int k = 0;
+
+LinkedHashMap<String, String> hm1 = new LinkedHashMap<String, String>();
+
+Iterator<String> it = h1.keySet().iterator();
+
+while (it.hasNext()) {
+
+String s2 = it.next();
+
+String s3 = h1.get(s2);
+
+if (s3.equals(n))
+
+hm1.put(s2, s3);
+
+}
+
+return hm1;
+
+}
+
+}
+
+ 
+
+Output:
+
+4
+
+Manish
+
+MGR
+
+Babu
+
+CLK
+
+Rohit
+
+MGR
+
+Viru
+
+PGR
+
+MGR
+
+ 
+
+Manish
+
+Rohit
+
+ 
+
